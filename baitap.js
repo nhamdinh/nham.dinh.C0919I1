@@ -1,5 +1,5 @@
-function chuyen() {
-    let doc = +document.getElementById("DoC_1").value;
-    let sangdofResult = doc * 1.8 + 32;
-    document.getElementById("do F").value = sangdofResult;
+function tinh() {
+    let bk = +document.getElementById("bankinh_1").value;
+    let dientichResult = bk * bk * Math.PI;
+    document.getElementById("dientich").value = dientichResult;
 }
