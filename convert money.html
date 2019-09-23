@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>convert money</title>
+    <script src="money.js"></script>
+
+</head>
+<body>
+<fieldset>
+    <legend>Doi tien</legend>
+    <table>
+        <tr>
+            <td colspan="2">
+<label> So luong</label>
+            </td>
+            <td>
+    <input type=number id="amount"  min=0>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+<label> FROM </label>
+            </td>
+            <td>
+                <select id="from" >
+                    <option value="1">VND</option>
+                    <option value="23000">USD</option>
+                    <option value="25600">EUR</option>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label> TO </label>
+            </td>
+<td>
+    <select id="to" >
+        <option value="1">VND</option>
+        <option value="23000">USD</option>
+        <option value="25600">EUR</option>
+
+</td>
+        <tr>
+            <td colspan="2">
+                <label>Ket qua</label>
+            </td>
+                <td>
+                <input disabled id="calculated" type="text">
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="4">
+                <button onclick="converted()">Convert</button>
+            </td>
+        </tr>
+        <tr>
+    </table>
+</fieldset>
+</body>
+</html>
