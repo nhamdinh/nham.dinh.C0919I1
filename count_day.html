@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id = "Tháng" type ="number" >
+<input id = "Ngay" type ="button" onclick="TinhToan()" value="click">
+<output id = "result" >  </output>
+
+<script>
+    function TinhToan() {
+        let thang = document.getElementById("Tháng").value;
+        thang = parseInt(thang);
+        switch (thang) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 9:
+            case 11:
+                document.getElementById("result").innerHTML= "So Ngày là 31";
+                break;
+            case 2:
+                document.getElementById("result").innerHTML= "So Ngày là 28 hoặc 29";
+                break;
+            case 6:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("result").innerHTML= "So Ngày là 30";
+        }
+    }
+</script>
+</body>
+</html>
+</body>
+</html>
