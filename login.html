@@ -6,22 +6,11 @@
 </head>
 <body>
 <script>
-    let userName = prompt("Who's there?", '');
-    if (userName == ' ') {
-        //code vào đây
-    } else if (userName == null) {
-        alert('Canceled');
-    } else {
-        alert("I don't know you");
-    }
-    let pass = prompt('Password?', '');
-    if (pass == 'TheMaster') {
-        alert('Welcome!');
-    } else if (pass == null) {
-        alert('Canceled.');
-    } else {
-        alert('Wrong password');
-    }
+    var a = parseInt(prompt("a"));
+    var b = parseInt(prompt("b"));
+
+    result = (a + b < 4) ? 'Below' : 'Over';
+    alert(result)
 </script>
 </body>
 </html>
