@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vonglap</title>
+</head>
+<body>
+
+<script language="javascript">
+
+
+    let sout = "<table width='100%' border='1'  cellspacing='0'width='300'  cellpadding='15'>";
+     let i = j = 1;
+    while (i <= 10) {
+        sout = sout + "<tr>";
+        while (j <= 10) {
+            sout = sout + "<td>" +  i * j + "</td>";
+            j++;
+        }
+
+
+
+        sout = sout + "</tr>";
+        i++;
+
+        j=1;
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+</script>
+
+
+
+
+</body>
+</html>
