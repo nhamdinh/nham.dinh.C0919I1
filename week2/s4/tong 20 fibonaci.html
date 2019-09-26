@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng 20 sô đầu tiên</title>
+</head>
+<body>
+<script>
+    let num = [1,1];
+    let count = 2;
+    let total = 2;
+    while (count<19){
+        let tmp = num[count-2] + num[count-1];
+        num.push(tmp);
+        total+=tmp;
+        count++;
+    }
+    document.write(total);
+</script>
+</body>
+</html>
