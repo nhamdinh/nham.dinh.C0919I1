@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="Rasonguyen()">
+<script>
+    function Rasonguyen() {
+        let Insonguyen = parseInt(prompt("Số lượng sô nguyên bạn muốn nhập là :"),"");
+        let bienCount = 0;
+        let  chiahetcho1 = 1;
+        let text = Insonguyen + "Số nguyên tố là ";
+        while (bienCount<Insonguyen){
+            if (Checknguyento(chiahetcho1)==1){
+                text += chiahetcho1+",";
+                bienCount++;
+            }
+            chiahetcho1++
+        }
+        text = text.substring(0,text.length-1)
+        document.write(text);
+    }
+    function Checknguyento(x) {
+        if (x < 2){
+            return 0;
+        } else
+            for (i=2;i<= Math.sqrt(i);i++) {
+                if (x % i == 0){
+                    return 0;
+                }
+            }
+        return 1;
+    }
+</script>
+</body>
+</html>
