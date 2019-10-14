@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset>
+
+<legend>Convert Fah to Cel</legend>
+<p>
+    <label> Input Fah</label>
+    <input type = 'number' placeholder=" Write Fal"
+            oninput="tempFal(this.value)">
+</p>
+<p>
+    Celsius : <span id = "celConverted"></span>
+</p>
+</fieldset>
+
+<script>
+    function tempFal(valNum) {
+        valNum = parseFloat(valNum)
+        document.getElementById("celConverted").innerHTML = (valNum - 32) / 1.8
+
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

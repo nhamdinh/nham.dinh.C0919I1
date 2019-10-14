@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="Long">
+<input type="text" id="Wide">
+<button onclick="Rectangle.Create()">Creat</button>
+<input type="text" disabled id="Acreage">
+<input type="text" disabled id="Perimeter">
+<canvas id="myCanvas" width="1368" height="768"style="border:25px solid red; "></canvas>
+<script>
+    let long = document.getElementById("Long")
+    let wide = document.getElementById("Wide")
+    let acreage = document.getElementById("Acreage")
+    let perimeter = document.getElementById("Perimeter")
+    let Paradigm = function(Long,Wide){
+        this.Long = Long;
+        this.Wide = Wide;
+        this.Acreage = function () {
+            return  this.Long * this.Wide;
+        };
+        this.Perimeter =function () {
+            return (this.Long + this.Wide)*2;
+        };
+        this.Create = function Create(){
+            this.Long =long.value;
+            this.Wide = wide.value;
+            acreage.value = this.Acreage();
+            perimeter.value = this.Perimeter();
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.clearRect(0,0,1368,768);
+            ctx.beginPath();
+            ctx.rect(100, 100, this.Long, this.Wide);
+            ctx.stroke();
+            long.value = "";
+            wide.value = "";
+        };
+    };
+    let Rectangle = new Paradigm(Long,Wide);
+</script>
+</body>
+
+</html>

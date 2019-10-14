@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset>
+    <legend>Tìm giá trị lớn nhất một dãy số</legend>
+    Nhập Giá Trị Vào Mảng<input type="text" id="value1"> </br>
+    <button onclick="Click()">Click</button>
+    <button onclick="addArray()">Nhập Vào Mảng</button>
+    Giá trị lớn nhất là
+    <output id="result"></output>
+
+</fieldset>
+<script>
+    let x = 0;
+    let y = [];
+    let max = 0;
+    let index = 0;
+    function addArray() {
+        x = document.getElementById("value1").value;
+        y.push(x);
+        x = document.getElementById("value1").value = "";
+    }
+    function Click() {
+        for (i = 0; i < y.length; i++) {
+            if (max < y[i]) {
+                max = y[i];
+                index = i;
+            }
+        }
+        document.getElementById("result").value = max+" tai vi tri "+(index+1);
+    }
+</script>
+</body>
+</html>

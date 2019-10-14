@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh so le</title>
+</head>
+<body>
+Mảng số nguyên <input id="input1"></br>
+Tong<input disabled id="output2"></br>
+<button onclick="Calculate()">tinh_Tong</button>
+<script>
+    function Calculate() {
+        let mangSo = []
+        let m = document.getElementById("input1").value;
+        tmp = m.split("");
+        mangSo.push(tmp);
+
+        function sum(mang) {
+            let sum = 0;
+            for (let i = 0; i < mang.length; i++) {
+                if (mang[i] % 2 != 0) {
+                    sum += mang[i];
+                }
+            }
+            return sum;
+        }
+
+
+        document.getElementById("output2").value = sum;
+    }
+
+</script>
+</body>
+</html>

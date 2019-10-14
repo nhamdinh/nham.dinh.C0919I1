@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>convert money</title>
-    <script src="money.js"></script>
 
 </head>
 <body>
@@ -12,11 +11,10 @@
     <table>
         <tr>
             <td colspan="2">
-<label> So luong</label>
+            <label> So luong</label>
             </td>
             <td>
-    <input type=number id="amount"  min=0>
-
+            <input type=number id="amount"  min=0>
             </td>
         </tr>
         <tr>
@@ -30,35 +28,43 @@
                     <option value="25600">EUR</option>
 
             </td>
-
         </tr>
         <tr>
             <td colspan="2">
                 <label> TO </label>
             </td>
-<td>
-    <select id="to" >
+            <td>
+        <select id="to" >
         <option value="1">VND</option>
         <option value="23000">USD</option>
         <option value="25600">EUR</option>
+            </td>
+        </tr>
 
-</td>
         <tr>
             <td colspan="2">
                 <label>Ket qua</label>
             </td>
-                <td>
-                <input disabled id="calculated" type="text">
+            <td>
+                <input disabled id="calculated" type="number">
             </td>
-
         </tr>
         <tr>
             <td colspan="4">
                 <button onclick="converted()">Convert</button>
             </td>
         </tr>
-        <tr>
     </table>
 </fieldset>
+<script>
+
+    function converted() {
+        let sotien = +document.getElementById("amount").value;
+        let so1 = +document.getElementById("from").value;
+        let so2 = +document.getElementById("to").value;
+        let calculateResult =  so1 / so2 * sotien;
+        document.getElementById("calculated").value = calculateResult;
+    }
+</script>
 </body>
 </html>

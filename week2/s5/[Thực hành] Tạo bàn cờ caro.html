@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+
+</head>
+
+<body style="margin: auto;" onload="reset()">
+
+<fieldset style="width: fit-content;height: fit-content">
+
+    <legend><h3>Tic Tac Toe</h3></legend>
+
+    <table style="font-size: 85px" id="tbl">
+
+    </table>
+
+</fieldset>
+
+<table>
+
+    <tr>&nbsp</tr>
+
+    <tr>
+
+        <td><button onclick="reset()">Reset</button></td>
+
+    </tr>
+
+    <tr>
+
+        <h1 id ="res"></h1>
+
+    </tr>
+
+</table>
+
+</body>
+
+<script>
+    let a =[];
+    let flag =0;
+    let turn =0;
+    let gameover =0;
+    let res = document.getElementById("res");
+    function reset() {
+        for(i =0;i<3;i++){
+            a[i] = new Array(".",".",".");
+        }
+        turn =0;
+        gameover =0;
+        res.innerText="";
+        showB();
+    }
+    function showB() {
+        let text="";
+        for(i =0;i<3;i++){
+            text+="<tr>";
+            for(j=0;j<3;j++){
+                text+="<td id='"+i+"-"+j+"' onclick='change(this.id)'>"+a[i][j]+"&nbsp&nbsp"+"</td>";
+            }
+            text+="</tr>";
+        }
+        document.getElementById("tbl").innerHTML=text;
+    }
+    function change(id) {
+        if(gameover == 0){
+            let pos = id.split("-");
+            let pos1 =parseInt(pos[0]);
+            let pos2 =parseInt(pos[1]);
+            if(a[pos1][pos2] =="."){
+                if(turn%2==0){
+                    a[pos1][pos2] = "x";
+                    flag =0;
+                    turn++;
+                }else{
+                    a[pos1][pos2]= "o";
+                    flag =1;
+                    turn++;
+                }
+                showB();
+                if (check(pos1,pos2)){
+                    gameOver();
+                }
+            }
+        }
+    }
+    function check(x,y) {
+        let simb = a[x][y];
+        if(a[x][0] == simb && a[x][1] == simb && a[x][2] == simb){
+            return true;
+        }else if(a[0][y] == simb && a[1][y] == simb && a[2][y] == simb){
+            return true;
+        }else if(a[0][0] == simb && a[1][1] == simb && a[2][2] == simb){
+            return true;
+        }else if(a[0][2] == simb && a[1][1] == simb && a[2][0] == simb){
+            return true;
+        }else return false;
+    }
+    function gameOver() {
+        gameover =1;
+        if(flag == 0){
+            res.innerText="GAME OVER X WIN !!! ";
+        }else{
+            res.innerText="GAME OVER O WIN !!! ";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>so nguyen to</title>
+</head>
+<body onload="f()">
+</body>
+<script>
+    function f() {cc
+        let num = parseInt(prompt("Nhap so N: "));
+        let count = 0;
+        let start = 0;
+        let text = num + " So nguyen to dau tien: ";
+        while (count < num) {
+            if (f1(start) == 1) {
+                text += start + ",";
+                count++;
+            }
+            start++;
+        }
+        text = text.substring(0, text.length - 1);
+        document.write(text);
+    }
+    function f1(x) {
+        if (x < 2) {
+            return 0;
+        } else {
+            for (i = 2; i <= Math.sqrt(x); i++) {
+                if (x % i == 0) {
+                    return 0;
+                }
+            }
+            return 1;
+        }
+    }
+</script>
+</html>

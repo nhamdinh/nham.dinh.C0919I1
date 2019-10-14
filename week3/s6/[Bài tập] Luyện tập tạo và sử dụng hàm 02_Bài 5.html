@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3 sô nguyên bất kỳ</title>
+</head>
+<body>
+<input disabled id="Random3">
+<button onclick="Random()">Random</button>
+<output id="Smallest"></output>
+<script>
+    function Random() {
+        let random = [];
+        for (i = 0; i < 3; i++) {
+            let a = Math.floor((Math.random() * 1000));
+            random.push(a);
+        }
+        document.getElementById("Random3").value = random;
+        findSmallest(random);
+    }
+
+    function findSmallest(random) {
+        let min = random[0];
+        for (j = 1; j < 3; j++) {
+            if (min > random[j]) {
+                min = random[j]
+            }
+        }
+        document.getElementById("Smallest").value = min;
+    }
+</script>
+</body>
+</html>

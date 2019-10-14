@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [3, 5, 1, 8, -3, 7, 8]
+    for ( let i = 0 ; i < arr1.length ; i++){
+        for( let j = arr1.length - 1 ; i < j ; j--){
+            if ( arr1[i] < arr1[j]){
+                a = arr1[i]
+                arr1[i] = arr1[j]
+                arr1[j] = a
+            }
+        }
+    }
+    document.write( " gia tri nho nhat la :" + arr1[arr1.length - 1])
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

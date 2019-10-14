@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra sô nguyên tố</title>
+</head>
+<body>
+<script>
+    function Check(x) {
+        if (x < 2) {
+            return false;
+        } else {
+            for (j = 2; j <= Math.sqrt(x); j++) {
+                if (x % j == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    let nhapso = parseInt(prompt("Nhập sô Bất kỳ"));
+    let ketqua = Check(nhapso);
+    if (ketqua){
+        alert("là sô nguyên tố");
+    }
+    else
+    {
+        alert("Không phải sô nguyên tố");
+    }
+</script>
+</body>
+</html>

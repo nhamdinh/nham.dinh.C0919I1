@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset>
+    moi nhap so: <input type="number" placeholder="moi_nhap_so" oninput="binh_phuong()" id="so"> </br>
+    binh phuong hai so la :<input  placeholder="binh_phuong" disabled id="tich_2_so"> </br>
+</fieldset>
+<script>
+    function binh_phuong() {
+        let gia_tri = +document.getElementById("so").value;
+        document.getElementById("tich_2_so").value = gia_tri * gia_tri;
+    }
+</script>
+</body>
+</html>

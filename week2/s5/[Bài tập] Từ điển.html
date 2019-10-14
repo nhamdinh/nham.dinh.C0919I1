@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<fieldset><legend>Từ Điển</legend>
+    <table>
+        <tr>
+            <td> <input placeholder="nhap_tieng_viet" id="txtnhap"></td>
+            <td> <input placeholder="xuat_tieng_anh" disabled id="result"> </td>
+
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="Write()">Dịch</button></td>
+            <td>
+
+            </td>
+        </tr>
+
+
+
+    </table>
+
+
+
+</fieldset>
+<script>
+    let nhapvao= '';
+    let English = ["Play", "Love", "Book", "Bag"];
+    let VietNamese = ["Choi", "Yeu", "Sach", "Cap"];
+    function Write() {
+        nhapvao = document.getElementById("txtnhap").value;
+        for (i = 0; i <4 ; i++) {
+            if (nhapvao == English[i]) {
+                document.getElementById("result").value = VietNamese[i];
+            }
+            else if (nhapvao == VietNamese[i]) {
+                document.getElementById("result").value = English[i];
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

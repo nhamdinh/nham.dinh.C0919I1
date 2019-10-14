@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset>
+    nhap ban kinh <input type="number" placeholder="ban_kinh_hinh_tron" oninput="calculator()" id="bankinh"></br>
+    chu vi la : <input disabled placeholder="chu_vi" id="chuvi"></br>
+    dien tich la : <input disabled placeholder="dien_tich" id="dientich"></br>
+</fieldset>
+<script>
+    function calculator() {
+        let R = +document.getElementById('bankinh').value;
+        document.getElementById('chuvi').value = 2 * R * Math.PI
+        document.getElementById('dientich').value = R * R * Math.PI
+    }
+</script>
+</body>
+</html>

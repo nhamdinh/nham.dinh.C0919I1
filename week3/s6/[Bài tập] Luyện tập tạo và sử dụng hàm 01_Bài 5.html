@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<button onclick="Conversion()"> Check </button>
+<script>
+    function Conversion() {
+        let onetime = true;
+        let Choise = prompt("");
+        let Constellation1 = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+        let Constellation2 = ["Ursa","Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa","Major","Leo"];
+        for (let i=0;i<Constellation1.length;i++){
+            if (Choise == Constellation1[i]){
+                alert("Your Choise is"+ Constellation2[i]);
+                onetime = false;
+            }
+        }
+        Ifnot (onetime)
+    }
+    function Ifnot (onetime) {
+        if (onetime == true)
+        {
+            alert("Your Choise is wrong");
+        }
+    }
+</script>
+</body>
+</html>

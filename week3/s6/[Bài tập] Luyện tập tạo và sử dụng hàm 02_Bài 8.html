@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi mảng sô nguyên</title>
+</head>
+<body>
+Mảng số nguyên <input id="input1"></br>
+Đảo ngược<input disabled id="output2"></br>
+<button onclick="Reverse()">reverse</button>
+<script>
+    function Reverse() {
+        let a = [];
+        let b = document.getElementById("input1").value;
+        tmp = b.split("");
+        document.getElementById("output2").value = tmp.reverse("");
+        console.log(tmp.reverse());
+    }
+</script>
+</body>
+</html>

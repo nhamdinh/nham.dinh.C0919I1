@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Số 1 <input id = "input1"></br>
+Sô 2<input id = "input2"></br>
+<button onclick="Push()">Nhập vào mảng</button></br>
+Vitri so 1 <input disabled id = "position1"></br>
+Vitri so 2 <input disabled id = "position2"></br>
+<button onclick="changePositon()">Đổi vị tri của 1 cho 2</button>
+
+</body>
+<script>
+    let number1;
+    let number2 ;
+    let b = [];
+    function Push() {
+        number1 = +document.getElementById("input1").value;
+        number2 = +document.getElementById("input2").value;
+        for (i=0;i<20;i++)
+        {
+            let random = Math.floor(Math.random()*100);
+            b.push(random);
+        }
+        b.push(number1);
+        b.push(number2);
+        findPosition1();
+        findPosition2();
+        console.log(b);
+    }
+    function findPosition1() {
+        for (j=0;j<=b.length;j++)
+        {
+            if (number1 == b[j])
+            {
+                document.getElementById("position1").value = j;
+            }
+        }
+    } function findPosition2() {
+        for (z=0;z<=b.length+1;z++)
+        {
+            if (number2 == b[z])
+            {
+                document.getElementById("position2").value =z;
+            }
+        }
+    }
+    function changePositon() {
+        let position1 = document.getElementById("position1").value;
+        let position2 = document.getElementById("position2").value;
+        let tmp = b[position1];
+        b[position1] = b[position2];
+        b[position2] = tmp;
+        document.getElementById("position1").value = "";
+        document.getElementById("position1").value += position2;
+        document.getElementById("position2").value = "";
+        document.getElementById("position2").value += position1;
+    }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra đỗi xứng</title>
+</head>
+<body>
+<input id="Chain">
+<button onclick="check()">Check</button>
+<output id="result"></output>
+<script>
+    function check() {
+        let flag = true;
+        let value = document.getElementById("Chain").value;
+        for(let i = 0; i<value.length/2;i++){
+            if(value[i] != value[value.length-1-i]){
+                document.getElementById('result').innerHTML = "It'snot a palindrome";
+                flag = false;
+                break;
+            }
+        }
+        if(flag==true) document.getElementById('result').innerHTML = "It's a palindrome";
+    }
+</script>
+</body>
+
+</html>

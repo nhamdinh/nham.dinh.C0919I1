@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset><legend>Kiểm tra số nguyên dương</legend>
+    Nhập số :<input type="text" id="yournumber"></br>
+    <button onclick="Check()">Check</button>
+    <output id="result"></output>
+
+</fieldset>
+<script>
+    function Check() {
+        let Yournumber = + document.getElementById("yournumber").value;
+        if (Yournumber > 0) {
+            document.getElementById("result").innerHTML = "la so nguyen duong";
+        } else {
+            document.getElementById("result").innerHTML = " khong phai";
+        }
+    }
+</script>
+</body>
+</html>
