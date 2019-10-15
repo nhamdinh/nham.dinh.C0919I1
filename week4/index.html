@@ -12,13 +12,13 @@
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
 
-    let brickRowCount = 10;// so cot
-    let brickColumnCount = 4;// so dong
-    let brickWidth = 75;// dai 1 o
-    let brickHeight = 20;// rong 1 o
-    let brickPadding = 10;// khoang cach giua cac o
-    let brickOffsetTop = 30;// khoang cach voi top
-    let brickOffsetLeft = 30;// khoang cach le trai
+    let brickRowCount = 10;
+    let brickColumnCount = 4;
+    let brickWidth = 75;
+    let brickHeight = 20;
+    let brickPadding = 10;
+    let brickOffsetTop = 30;
+    let brickOffsetLeft = 30;
     let bricks = [];
     for (let i = 0; i < brickColumnCount; i++) {
         bricks[i] = [];
@@ -29,22 +29,19 @@
 
 
 
-    let ballRadius = 15;// kick thuoc hat
-    let x = canvas.width / 2;// vi tri khoi dau cua ball
-    let y = canvas.height / 2;// vi tri khoi dau cua ball
-    let dx = 6;// khoang cach di chuyen
+    let ballRadius = 15;
+    let x = canvas.width / 2;
+    let y = canvas.height / 2;
+    let dx = 6;
     let dy = -6;
-    let paddleWidth = 75;// dai thanh chan
-    let paddleHeight = 10;// rong thanh chan
-    let paddleX = (canvas.width - paddleWidth) / 2; //  vi tri mac dinh
+
+    let paddleWidth = 75;
+    let paddleHeight = 10;
+    let paddleX = (canvas.width - paddleWidth) / 2;
     let rightPressed = false;
     let leftPressed = false;
     let score = 0;
     let lives = 3;
-
-    document.addEventListener("mousemove", mouseMove, false);
-    document.addEventListener("keydown", keyRight, false);
-    document.addEventListener("keyup", keyLeft, false);
 
     function drawBricks() {
         for (i = 0; i < brickColumnCount; i++) {
@@ -93,6 +90,9 @@
         ctx.fillText("LIVES: " + lives, canvas.width - 65, 20);
     }
 
+    document.addEventListener("mousemove", mouseMove, false);
+    document.addEventListener("keydown", keyRight, false);
+    document.addEventListener("keyup", keyLeft, false);
 
     function keyRight(r) {
         if (r.keyCode == 39) {
@@ -116,6 +116,9 @@
             paddleX = relativeX - paddleWidth / 2;
         }
     }
+
+
+
 
     function collisionDetection() {
         for (let i = 0; i < brickColumnCount; i++) {

@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
-</body>
-</html>
+<img id="slide" src="anh1.jpg" height="320" width="464"/>
+
+<button>ok</button>
+<script>
+    <
+    div >
+    < img
+    id = "slider"
+    src = "https://raw.githubusercontent.com/ichte/Planets-Android-Learning/master/earth.jpg" >
+        < button
+    onclick = "prev()" > Ảnh
+    trước < /button>
+    < button
+    onclick = "next()" > Ảnh
+    sau < /button>
+    < /div>
+
+    < script >
+    var images = [
+        "anh1.jpg",
+        "https://raw.githubusercontent.com/ichte/Planets-Android-Learning/master/jupiter.jpg",
+        "https://raw.githubusercontent.com/ichte/Planets-Android-Learning/master/neptune.jpg"
+    ];
+    var num = 0;
+
+    function next() {
+        var slider = document.getElementById("slider");
+        num++;
+        if (num >= images.length) {
+            num = 0;
+        }
+        slider.src = images[num];
+    }
+
+    function prev() {
+        var slider = document.getElementById("slider");
+        num--;
+        if (num < 0) {
+            num = images.length - 1;
+        }
+        slider.src = images[num];
+    }
+</script>
+alert(slide)
+</script>
+<
+/body>
+< /html>

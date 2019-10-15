@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div>
+    <img id="slider" src="download.jpg">
+    <button onclick="prev()"> Ảnh trước</button>
+    <button onclick="next()"> Ảnh sau</button>
+    </br>
+    <input id="dap_an"></br>
+    <input id="ketqua" placeholder="nhap_ket_qua"></br>
+    <button onclick="kiem_tra()">kiem tra</button>
+
+</div>
+
+<script>
+    let images = [
+        "anh1.jpg",
+        "anh2.jpg",
+        "anh3.jpg"
+    ];
+    let box = '<input>'
+    let list_dap_an = [
+        'baoquat',
+        'kinhdo',
+        'hungthu',
+    ]
+
+    let num = 0;
+
+
+    function next() {
+        let slider = document.getElementById("slider");
+        let dapan = document.getElementById("dap_an");
+
+
+
+
+        num++;
+        if (num >= images.length) {
+            num = 0;
+        }
+        slider.src = images[num];
+
+
+        if (num >= list_dap_an.length) {
+            num = 0;
+        }
+        dapan.value = list_dap_an[num];
+    }
+
+    function prev() {
+        let slider = document.getElementById("slider");
+        num--;
+        if (num < 0) {
+            num = images.length - 1;
+        }
+        slider.src = images[num];
+    }
+    function kiem_tra() {
+nhapvao = document.getElementById('ketqua').value;
+for (let i = 0 ; i < list_dap_an.length ; i++){
+if(nhapvao == list_dap_an[i]){
+    alert('dung roi')
+}
+}
+
+
+    }
+</script>
 </body>
 </html>
