@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Enter the number <input placeholder="fibonacci" type="number" id="input">
+<button type="button" onclick="display()">Print</button>
+<p id="output"></p>
+<script>
+    function printFibonacci(a) {
+        if (a < 2) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function display() {
+        let output = document.getElementById('output');
+        let input = parseInt(document.getElementById('input').value);
+        let start = 1;
+        let text = "";
+        while (start <= input) {
+            if (printFibonacci(start)) {
+                text += start + " ";
+            }
+            start++;
+        }
+        output.innerText = text;
+    }
+</script>
+</body>
+</html>

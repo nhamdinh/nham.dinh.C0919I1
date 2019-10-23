@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>c
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function validate(str) {
+        let regex = /^[a-zA-z0-9]+[a-zA-z0-9]*@[a-zA-z0-9]+(\.[a-zA-z0-9]+)$/;
+        if (regex.test(str)) {
+            return true;
+        } else return false;
+    }
+
+    let test1 = "abc@a.com"
+    let test2 = "a@gmail.x";
+    let test3 = "#ab@gamil.com"
+    document.write(validate(test1));
+    document.write(validate(test2));
+    document.write(validate(test3));
+</script>
+</body>
+</html>

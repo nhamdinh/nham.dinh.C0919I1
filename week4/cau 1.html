@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findMaxScore() {
+        let input_array = [10, 5, 2, 8, -1, 6, 8];
+        let maxScore = input_array[0];
+        for ( let i = 0; i < input_array.length; i++) {
+            if (input_array[i] > maxScore) {
+                maxScore = input_array[i];
+            }
+        }
+        alert(' gia tri lon nhat cua mang la :' + maxScore);
+    }
+    findMaxScore();
+</script>
+</body>
+</html>
